@@ -1,28 +1,25 @@
-import { useState } from 'react'
+import React from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Packages from './components/Packages'
+import Campaigns from './components/Campaigns'
+import Footer from './components/Footer'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
+    <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-emerald-50 text-slate-800">
+      <div className="pointer-events-none fixed inset-0 -z-10 opacity-60">
+        <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-emerald-200 blur-3xl" />
+        <div className="absolute top-1/3 -right-24 h-80 w-80 rounded-full bg-lime-200 blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-teal-200 blur-3xl" />
       </div>
+      <Navbar />
+      <main>
+        <Hero />
+        <Packages />
+        <Campaigns />
+      </main>
+      <Footer />
     </div>
   )
 }
-
-export default App
